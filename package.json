@@ -4,19 +4,29 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "build:android": "",
+    "build:ios": "xcodebuild -workspace ios/POCRePack.xcworkspace -scheme POCRePack -configuration POCRePack.Release -sdk iphonesimulator",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"
   },
   "dependencies": {
+    "@react-navigation/drawer": "7.1.1",
+    "@react-navigation/native": "7.0.14",
+    "@react-navigation/native-stack": "7.2.0",
     "react": "18.3.1",
-    "react-native": "0.75.4"
+    "react-native": "0.75.4",
+    "react-native-gesture-handler": "2.22.0",
+    "react-native-reanimated": "3.16.7",
+    "react-native-safe-area-context": "5.1.0",
+    "react-native-screens": "4.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@babel/preset-env": "^7.20.0",
     "@babel/runtime": "^7.20.0",
+    "@callstack/repack": "^4.4.1",
     "@react-native/babel-preset": "0.75.4",
     "@react-native/eslint-config": "0.75.4",
     "@react-native/metro-config": "0.75.4",
@@ -24,13 +34,17 @@
     "@types/react": "^18.2.6",
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^29.6.3",
+    "babel-loader": "^9.2.1",
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
     "react-test-renderer": "18.3.1",
-    "typescript": "5.0.4"
+    "terser-webpack-plugin": "^5.3.11",
+    "typescript": "5.0.4",
+    "webpack": "^5.97.1"
   },
   "engines": {
-    "node": ">=18"
-  }
+    "node": "20"
+  },
+  "packageManager": "yarn@3.8.7"
 }
