@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">POCRePack</string>
+    <string name="RepackPublicKey">
+        -----BEGIN PUBLIC KEY-----
+        MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA15CIZO7nZLh6Q0H8Dpm3
+        yI0tUNZUlmzMaTprxcHt55MlNF1rpsG6uvRkmZyomRMkQenE9lU8vFqu+Ip5wSBy
+        fzg9mQhkljAXKzG+eJiCw54BybONLY+RVF5tPtQwYeZ6SVuLJmcy9oWxQ1fdmpUB
+        aOrm8RBV8X1MULjZCQns7NQd/SLOD7alXxaWu65fdwosgGr6YXqggu25ecKTKYzR
+        4x2O5MYPeaINcdunx59w9XkIMyBzfdtaklbw8XTc+s3CzCEJrM0J1HR69j20x6e8
+        SE1rQFNQUWRCkdHRPRmOW8S9jHDssL6OBIy/tCr6i4ODU/Lph1f69Q8oI5QX7fdq
+        7PDcr9AfRSyu9bSHXTKxh9cGaVnyrtggp7VLt347jWHtSkuMy04iEdKifdCRxAUv
+        mLamyTpBOUSfVrWcyyhtLolz9S/ziI168Hp1XZmnnDhnoDD0rJWmTaZWKhNnZ5Dh
+        eGC3ZsCWUYfdYRs5amU8agmjiV9DCaI0tid9ZNO3YsIVa6F9gTzDGqnTolJ1nF2s
+        wN0WKbfW7YqEELmwo0GZtvxtqQ8o984QYp6LH+U3epLOQs4ZCUjW3dig6zUqRB+z
+        oPhsggb4zFEWkQYHMbvCnIK88oFO0KBQSBDxOm5C2A7BOSNFPqpdN//5OB7mfZvm
+        CafjWrI01uolkZc1Ik+Ab3UCAwEAAQ==
+        -----END PUBLIC KEY-----
+    </string>
 </resources>
