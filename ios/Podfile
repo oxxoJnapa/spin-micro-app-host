@@ -4,6 +4,9 @@ require Pod::Executable.execute_command('node', ['-p',
     "react-native/scripts/react_native_pods.rb",
     {paths: [process.argv[1]]},
   )', __dir__]).strip
+require_relative '../node_modules/@digitaltitransversal/tr_superapp_theme/react_native_theme_pods'
+
+ENV['USE_HERMES'] = '1'
 
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
@@ -22,6 +25,8 @@ target 'POCRePack' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+
+  use_theme_modules!(:node_modules_path => "../")
 
   target 'POCRePackTests' do
     inherit! :complete

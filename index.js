@@ -4,13 +4,24 @@
 import 'react-native-gesture-handler';
 
 import {AppRegistry, Platform} from 'react-native';
-import App from './App';
+import App from './src/App';
 import {name as appName} from './app.json';
 import {ScriptManager, Script, Federated} from '@callstack/repack/client';
 
+const baseLocalDomain = 'http://127.0.0.1';
+const baseRemoteDomain = 'https://d2e6qco24lqb4t.cloudfront.net';
+
+function getMicroAppUrl({ basePath, localPort }) {
+  if (__DEV__) {
+    return `${baseLocalDomain}:${localPort}/[name][ext]`;
+  }
+  return `${baseRemoteDomain}/${basePath}/[name][ext]`;
+}
+
 const resolveModuleFederated = Federated.createURLResolver({
   containers: {
-    app1: 'https://spin-modules-federated.s3.us-east-1.amazonaws.com/micro-app-1/[name][ext]',
+    app1: getMicroAppUrl({ basePath: 'micro-app-1', localPort: '9000' }),
+    app2: getMicroAppUrl({ basePath: 'micro-app-2', localPort: '9001' }),
   },
 });
 
@@ -27,12 +38,16 @@ ScriptManager.shared.addResolver(async (scriptId, caller) => {
       };
     }
 
+    /** Extract all lazy remote chunks from remote server */
+    /*return {
+      url: Script.getRemoteURL(`${baseDomain}/host-app/${scriptId}`),
+    };*/
+
     /** Extract all lazy local chunks from local file system */
     return {
       url: Script.getFileSystemURL(scriptId),
     };
   }
-
 
   const federatedModuleUrl = resolveModuleFederated(scriptId, caller);
 
@@ -45,5 +60,8 @@ ScriptManager.shared.addResolver(async (scriptId, caller) => {
   };
 });
 
+if (__DEV__) {
+  require('./ReactotronConfig');
+}
 
 AppRegistry.registerComponent(appName, () => App);

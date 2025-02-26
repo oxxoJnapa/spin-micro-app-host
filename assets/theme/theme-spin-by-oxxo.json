@@ -1,0 +1,333 @@
+{
+  "light": {
+    "colors": {
+      "brand_primary": "#531BC8",
+      "brand_secondary": "#FF6700",
+      "brand_tertiary": "#210B50",
+      "brand_gradient": ["#531BC8", "#7549D3"],
+      "content_primary": "#141418",
+      "content_secondary": "#33333D",
+      "content_tertiary": "#777785",
+      "content_accent": "#FF6700",
+      "content_primary_inverse": "#FFFFFF",
+      "content_secondary_inverse": "#A8A8B2",
+      "content_tertiary_inverse": "#777785",
+      "ui_active": "#531BC8",
+      "ui_active_tonal": "#EEE8FA",
+      "ui_disabled": "#A8A8B2",
+      "ui_success": "#3B8C04",
+      "ui_warn": "#CC8300",
+      "ui_error": "#CC3E3D",
+      "ui_active_inverse": "#9876DE",
+      "ui_disabled_inverse": "#A8A8B2",
+      "ui_success_inverse": "#88CA47",
+      "ui_warn_inverse": "#FFC866",
+      "ui_error_inverse": "#FF7372",
+      "surface_primary": "#FFFFFF",
+      "surface_secondary": "#F7F8FA",
+      "surface_tertiary": "#E2E2E9",
+      "surface_primary_inverse": "#031E37",
+      "surface_secondary_inverse": "#053058",
+      "surface_tertiary_inverse": "#084883",
+      "stroke_primary": "#777785",
+      "stroke_secondary": "#F2F3F7",
+      "stroke_primary_inverse": "#F2F3F7",
+      "stroke_secondary_inverse": "#777785",
+      "informational_surface": "#CFE4F8",
+      "informational_decoration": "#3D93E2",
+      "informational_content": "#084883",
+      "paused_surface": "#FFEDCC",
+      "paused_decoration": "#FFDB99",
+      "paused_content": "#664200",
+      "success_surface": "#E2FCBC",
+      "success_decoration": "#69BC24",
+      "success_content": "#2C6903",
+      "urgent_surface": "#FFC7C7",
+      "urgent_decoration": "#FF7372",
+      "urgent_content": "#661D1C",
+      "highlight_surface": "#FEDABA",
+      "highlight_decoration": "#FC9E54",
+      "highlight_content": "#993300",
+      "highlight_secondary_surface": "#DDD1F4",
+      "highlight_secondary_decoration": "#7549D3",
+      "highlight_secondary_content": "#4216A0",
+      "points_surface": "#CDF3F8",
+      "points_decoration": "#37CFE4",
+      "points_content": "#024E58",
+      "IS_DARK": false
+    }
+  },
+  "dark": {
+    "colors": {
+      "brand_primary": "#531BC8",
+      "brand_secondary": "#FF6700",
+      "brand_tertiary": "#210B50",
+      "brand_gradient": ["#531BC8", "#7549D3"],
+      "content_primary": "#141418",
+      "content_secondary": "#33333D",
+      "content_tertiary": "#777785",
+      "content_accent": "#FF6700",
+      "content_primary_inverse": "#FFFFFF",
+      "content_secondary_inverse": "#A8A8B2",
+      "content_tertiary_inverse": "#777785",
+      "ui_active": "#531BC8",
+      "ui_active_tonal": "#EEE8FA",
+      "ui_disabled": "#A8A8B2",
+      "ui_success": "#3B8C04",
+      "ui_warn": "#CC8300",
+      "ui_error": "#CC3E3D",
+      "ui_active_inverse": "#9876DE",
+      "ui_disabled_inverse": "#A8A8B2",
+      "ui_success_inverse": "#88CA47",
+      "ui_warn_inverse": "#FFC866",
+      "ui_error_inverse": "#FF7372",
+      "surface_primary": "#FFFFFF",
+      "surface_secondary": "#F7F8FA",
+      "surface_tertiary": "#E2E2E9",
+      "surface_primary_inverse": "#031E37",
+      "surface_secondary_inverse": "#053058",
+      "surface_tertiary_inverse": "#084883",
+      "stroke_primary": "#777785",
+      "stroke_secondary": "#F2F3F7",
+      "stroke_primary_inverse": "#F2F3F7",
+      "stroke_secondary_inverse": "#777785",
+      "informational_surface": "#CFE4F8",
+      "informational_decoration": "#3D93E2",
+      "informational_content": "#084883",
+      "paused_surface": "#FFEDCC",
+      "paused_decoration": "#FFDB99",
+      "paused_content": "#664200",
+      "success_surface": "#E2FCBC",
+      "success_decoration": "#69BC24",
+      "success_content": "#2C6903",
+      "urgent_surface": "#FFC7C7",
+      "urgent_decoration": "#FF7372",
+      "urgent_content": "#661D1C",
+      "highlight_surface": "#FEDABA",
+      "highlight_decoration": "#FC9E54",
+      "highlight_content": "#993300",
+      "highlight_secondary_surface": "#DDD1F4",
+      "highlight_secondary_decoration": "#7549D3",
+      "highlight_secondary_content": "#4216A0",
+      "points_surface": "#CDF3F8",
+      "points_decoration": "#37CFE4",
+      "points_content": "#024E58",
+      "IS_DARK": true
+    }
+  },
+  "typography": {
+    "fontConfig": {
+      "headline-extra-large": {
+        "fontFamily": "Montserrat-SemiBold",
+        "fontSize": 40,
+        "lineHeight": 52
+      },
+      "headline-large": {
+        "fontFamily": "Montserrat-SemiBold",
+        "fontSize": 24,
+        "lineHeight": 32
+      },
+      "headline-medium": {
+        "fontFamily": "Montserrat-SemiBold",
+        "fontSize": 20,
+        "lineHeight": 24
+      },
+      "headline-small": {
+        "fontFamily": "Montserrat-SemiBold",
+        "fontSize": 18,
+        "lineHeight": 24
+      },
+      "body-default": {
+        "fontFamily": "OpenSans-Regular",
+        "fontSize": 16,
+        "lineHeight": 20
+      },
+      "body-small": {
+        "fontFamily": "OpenSans-Regular",
+        "fontSize": 14,
+        "lineHeight": 20
+      },
+      "body-extra-small": {
+        "fontFamily": "OpenSans-Regular",
+        "fontSize": 12,
+        "lineHeight": 16
+      },
+      "body-default-bold": {
+        "fontFamily": "OpenSans-SemiBold",
+        "fontSize": 16,
+        "lineHeight": 20
+      },
+      "body-default-bold-interactive": {
+        "fontFamily": "OpenSans-SemiBold",
+        "fontSize": 16,
+        "lineHeight": 20,
+        "textDecorationLine": "underline"
+      },
+      "body-small-bold": {
+        "fontFamily": "OpenSans-SemiBold",
+        "fontSize": 14,
+        "lineHeight": 20
+      },
+      "body-small-bold-interactive": {
+        "fontFamily": "OpenSans-SemiBold",
+        "fontSize": 14,
+        "lineHeight": 20,
+        "textDecorationLine": "underline"
+      },
+      "body-extra-small-bold": {
+        "fontFamily": "OpenSans-SemiBold",
+        "fontSize": 12,
+        "lineHeight": 16
+      },
+      "body-extra-small-bold-interactive": {
+        "fontFamily": "OpenSans-SemiBold",
+        "fontSize": 12,
+        "lineHeight": 16,
+        "textDecorationLine": "underline"
+      },
+      "label-default": {
+        "fontFamily": "OpenSans-Regular",
+        "fontSize": 16,
+        "lineHeight": 16
+      },
+      "label-default-bold": {
+        "fontFamily": "OpenSans-SemiBold",
+        "fontSize": 16,
+        "lineHeight": 16
+      },
+      "label-default-bold-interactive": {
+        "fontFamily": "OpenSans-SemiBold",
+        "fontSize": 16,
+        "lineHeight": 16,
+        "textDecorationLine": "underline"
+      },
+      "label-small": {
+        "fontFamily": "OpenSans-Regular",
+        "fontSize": 14,
+        "lineHeight": 16
+      },
+      "label-small-bold": {
+        "fontFamily": "OpenSans-SemiBold",
+        "fontSize": 14,
+        "lineHeight": 16
+      },
+      "label-small-bold-interactive": {
+        "fontFamily": "OpenSans-SemiBold",
+        "fontSize": 14,
+        "lineHeight": 16,
+        "textDecorationLine": "underline"
+      },
+      "label-extra-small": {
+        "fontFamily": "OpenSans-Regular",
+        "fontSize": 12,
+        "lineHeight": 16
+      },
+      "label-extra-small-bold": {
+        "fontFamily": "OpenSans-SemiBold",
+        "fontSize": 12,
+        "lineHeight": 16
+      },
+      "label-extra-small-bold-interactive": {
+        "fontFamily": "OpenSans-SemiBold",
+        "fontSize": 12,
+        "lineHeight": 16,
+        "textDecorationLine": "underline"
+      }
+    },
+    "size": {
+      "xxs": 8,
+      "xs": 12,
+      "small": 14,
+      "medium": 16,
+      "large": 18,
+      "xl": 20,
+      "xxl": 24,
+      "xxxl": 40
+    },
+    "lineHeight": {
+      "small": 12,
+      "medium": 16,
+      "large": 20,
+      "xl": 24,
+      "xxl": 32,
+      "xxxl": 52
+    },
+    "fontFamily": {
+      "icon": "spinplus-icons",
+      "regular": "OpenSans-Regular",
+      "bold": "OpenSans-Bold",
+      "semiBold": "OpenSans-SemiBold",
+      "medium": "OpenSans-Medium",
+      "italic": "OpenSans-Italic",
+      "light": "OpenSans-Light",
+      "headlineBold": "Montserrat-Bold",
+      "headlineMedium": "Montserrat-SemiBold"
+    }
+  },
+  "size": {
+    "size_4xs": 0,
+    "size_3xs": 2,
+    "size_2xs": 4,
+    "size_xs": 8,
+    "size_sm": 12,
+    "size_md": 16,
+    "size_lg": 20,
+    "size_xl": 24,
+    "size_2xl": 32,
+    "size_3xl": 40,
+    "size_4xl": 44,
+    "size_5xl": 48,
+    "size_6xl": 56,
+    "size_7xl": 64,
+    "size_8xl": 76,
+    "size_9xl": 80
+  },
+  "space": {
+    "space_4xs": 0,
+    "space_3xs": 2,
+    "space_2xs": 4,
+    "space_xs": 8,
+    "space_sm": 12,
+    "space_md": 16,
+    "space_lg": 20,
+    "space_xl": 24,
+    "space_2xl": 32,
+    "space_3xl": 40,
+    "space_4xl": 44,
+    "space_5xl": 48,
+    "space_6xl": 56,
+    "space_7xl": 64,
+    "space_8xl": 76,
+    "space_9xl": 80
+  },
+  "borderRadius": {
+    "borderRadius_4xs": 0,
+    "borderRadius_3xs": 2,
+    "borderRadius_2xs": 4,
+    "borderRadius_xs": 6,
+    "borderRadius_sm": 8,
+    "borderRadius_md": 12,
+    "borderRadius_lg": 16,
+    "borderRadius_xl": 24,
+    "borderRadius_2xl": 32,
+    "borderRadius_3xl": 48,
+    "borderRadius_4xl": 64,
+    "borderRadius_5xl": 76,
+    "borderRadius_iconButton_sm": 24,
+    "borderRadius_iconButton_md": 32,
+    "borderRadius_iconButton_xs": 16,
+    "borderRadius_button_sm": 16,
+    "borderRadius_button_md": 24,
+    "borderRadius_card": 12,
+    "borderRadius_chip_sm": 16,
+    "borderRadius_chip_lg": 24
+  },
+  "borderWidth": {
+    "borderWidth_sm": 1,
+    "borderWidth_md": 2,
+    "borderWidth_lg": 3,
+    "borderWidth_xl": 4,
+    "borderWidth_2xl": 6,
+    "borderWidth_selected": 2
+  }
+}

@@ -2,6 +2,7 @@ import { createRequire } from 'node:module';
 import path from 'node:path';
 import * as Repack from '@callstack/repack';
 import TerserPlugin from 'terser-webpack-plugin';
+import sharedModules from './shared.modules.js';
 
 const dirname = Repack.getDirname(import.meta.url);
 const { resolve } = createRequire(import.meta.url);
@@ -149,9 +150,12 @@ export default (env) => {
        * https://github.com/babel/babel-loader#options
        */
       rules: [
+        Repack.NODE_MODULES_LOADING_RULES,
         {
           test: /\.[cm]?[jt]sx?$/,
           include: [
+            /node_modules(.*[/\\])+reactotron-react-native/,
+            /node_modules(.*[/\\])+reactotron-core-client/,
             /node_modules(.*[/\\])+react-native/,
             /node_modules(.*[/\\])+@react-native/,
             /node_modules(.*[/\\])+@react-navigation/,
@@ -163,6 +167,8 @@ export default (env) => {
             /node_modules(.*[/\\])+@callstack[/\\]repack/,
             /node_modules(.*[/\\])+react-freeze/,
             /node_modules(.*[/\\])+color/,
+            /node_modules(.*[/\\])+@digitaltitransversal/,
+            /node_modules(.*[/\\])+@gorhom/,
           ],
           use: 'babel-loader',
         },
@@ -234,10 +240,24 @@ export default (env) => {
           sourceMapFilename,
           assetsPath,
         },
+        /**
+         * configuration for local
+         * {
+         *   test: \/.*\/,
+         *   type: 'local',
+         * }
+         *
+         * configuration for remote
+         * {
+         *   test: \/.*\/,
+         *   type: 'remote',
+         *   outputPath: path.join('build/output', platform, 'remotes/core'),
+         * }
+         * */
         extraChunks: [
           {
             test: /.*/,
-            type: 'local',
+            type: 'local'
           },
         ],
       }),
@@ -250,16 +270,7 @@ export default (env) => {
       ),
       new Repack.plugins.ModuleFederationPlugin({
         name: "host",
-        shared: {
-          react: {
-            ...Repack.Federated.SHARED_REACT,
-            requiredVersion: "18.3.1",
-          },
-          "react-native": {
-            ...Repack.Federated.SHARED_REACT_NATIVE,
-            requiredVersion: "0.75.4",
-          }
-        }
+        shared: sharedModules,
       }),
     ],
   };
