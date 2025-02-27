@@ -1571,9 +1571,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@digitaltitransversal/tr_superapp_theme@npm:7.9.6":
+"@digitaltitransversal/tr_superapp_theme@file:./spin-packages/tr_superapp_theme-v1.tgz::locator=POCRePack%40workspace%3A.":
   version: 7.9.6
-  resolution: "@digitaltitransversal/tr_superapp_theme@npm:7.9.6::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40digitaltitransversal%2Ftr_superapp_theme%2F7.9.6%2Fe4c09b958de23d22dab1b8134c14b9126fb55b36"
+  resolution: "@digitaltitransversal/tr_superapp_theme@file:./spin-packages/tr_superapp_theme-v1.tgz::locator=POCRePack%40workspace%3A."
   dependencies:
     "@gorhom/bottom-sheet": 4.6.3
     "@kichiyaki/react-native-barcode-generator": 0.6.7
@@ -1596,7 +1596,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: ca1f856b25895a9980142f0a4511c8813666e3be88c0f0e845c00105bc59bd65972ba187d138da2e08060d6b6ff8841484362f0d7785f7ee52c59a512510e164
+  checksum: d247d1be306062af9496b18064396ab2aed16585e1794b1934454b3054feef4b7797a5a3d92e7ced1c0f82f8a37ea952afe7dfd1c8e458cc64b1a4047f0b08a6
   languageName: node
   linkType: hard
 
@@ -1721,15 +1721,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fintechdigitalventure/spin-mobile-illustrations@npm:2.1.1":
+"@fintechdigitalventure/spin-mobile-illustrations@file:./spin-packages/spin-mobile-illustrations-v1.tgz::locator=POCRePack%40workspace%3A.":
   version: 2.1.1
-  resolution: "@fintechdigitalventure/spin-mobile-illustrations@npm:2.1.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40fintechdigitalventure%2Fspin-mobile-illustrations%2F2.1.1%2F7715e96ffff290a3aa528619424fce69d209a41a"
+  resolution: "@fintechdigitalventure/spin-mobile-illustrations@file:./spin-packages/spin-mobile-illustrations-v1.tgz::locator=POCRePack%40workspace%3A."
   peerDependencies:
     "@fintechdigitalventure/spin-mobile-logger": "*"
     react: "*"
     react-native: "*"
     typescript: 5.0.4
-  checksum: 9f0c3476e99ce6db41eaf17da681dff39ca970973ef437af1113528b3b0d21d993c3bc06a431b3de5bfdada17b00f964d8ce56fb521336e2f57e54de479facee
+  checksum: a154e3edd7a8491f42a4d9b53c7a8694347d51772ecb24d2d04cc6a8c041db506976cd99c2310517a9a952462456dca51120d0dece94b26741666908f7546637
   languageName: node
   linkType: hard
 
@@ -3528,8 +3528,8 @@ __metadata:
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
     "@callstack/repack": ^4.4.1
-    "@digitaltitransversal/tr_superapp_theme": 7.9.6
-    "@fintechdigitalventure/spin-mobile-illustrations": 2.1.1
+    "@digitaltitransversal/tr_superapp_theme": "file:./spin-packages/tr_superapp_theme-v1.tgz"
+    "@fintechdigitalventure/spin-mobile-illustrations": "file:./spin-packages/spin-mobile-illustrations-v1.tgz"
     "@fluentui/react-context-selector": 9.1.57
     "@react-native/babel-preset": 0.75.4
     "@react-native/eslint-config": 0.75.4

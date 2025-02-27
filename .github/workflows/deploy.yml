@@ -1,0 +1,40 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read  # This is required for actions/checkout
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      DIGITAL_NPM_TOKEN: ${{ secrets.DIGITAL_NPM_TOKEN }}
+      SPIN_NPM_TOKEN: ${{ secrets.SPIN_NPM_TOKEN }}
+    steps:
+      - name: 🔑 Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE }}
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Enable CorePack
+        run: corepack enable
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Get file from s3
+        run: |
+          aws s3 cp s3://${{ vars.S3_BUCKET_NAME }}/${{ vars.S3_MICRO_APP_FOLDER }} ./version-manager/manifest.json
