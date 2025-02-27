@@ -52,12 +52,12 @@ jobs:
         continue-on-error: true
 
       - name: Get last host version uploaded
-        if: steps.download-host-manifest.conclusion == 'success'
+        if: steps.download-host-manifest.outcome == 'success'
         run: |
           echo "LAST_HOST_VERSION=$(node -p "require('./version-manager/manifest.json').host.last")" >> $GITHUB_ENV
 
       - name: Download last compatible container from s3
-        if: steps.download-host-manifest.conclusion == 'success'
+        if: steps.download-host-manifest.outcome == 'success'
         run: |
           aws s3 cp s3://${{ vars.S3_BUCKET_NAME }}/${{ vars.S3_MICRO_APP_FOLDER }}/$LAST_HOST_VERSION/containers.json ./version-manager/containers.json
 
