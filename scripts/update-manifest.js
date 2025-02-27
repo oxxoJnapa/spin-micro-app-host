@@ -18,13 +18,18 @@ const manifest = require(manifestPath);
 const pkgJson = require(packageJson);
 
 const host = manifest.host;
+const containers = manifest.containers;
 
 if (host.versions.includes(pkgJson.version)) {
   console.error('Version already exists in manifest');
   process.exit(1);
 }
 
+const currentVersion = host.last;
+
 host.versions = [...host.versions, pkgJson.version];
 host.last = pkgJson.version;
 
-fs.writeFileSync(manifestPath, JSON.stringify({ host }, null, 2));
+containers[pkgJson.version] = containers[currentVersion] ?? {};
+
+fs.writeFileSync(manifestPath, JSON.stringify({ host, containers }, null, 2));

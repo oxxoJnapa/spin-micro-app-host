@@ -38,7 +38,7 @@ jobs:
       - name: Create manifest.json
         run: |
           mkdir -p ./version-manager
-          echo '{ "host": { "versions": [], "last": "" } }' > ./version-manager/manifest.json
+          echo '{ "host": { "versions": [], "last": "" }, "containers": {} }' > ./version-manager/manifest.json
 
       - name: Download current manifest.json from s3
         run: |
