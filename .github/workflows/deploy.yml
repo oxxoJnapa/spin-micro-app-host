@@ -35,6 +35,20 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Get file from s3
+      - name: Create manifest.json
         run: |
-          aws s3 cp s3://${{ vars.S3_BUCKET_NAME }}/${{ vars.S3_MICRO_APP_FOLDER }} ./version-manager/manifest.json
+          mkdir -p ./version-manager
+          echo '{ "host": { "versions": [], "last": "" } }' > ./version-manager/manifest.json
+
+      - name: Download current manifest.json from s3
+        run: |
+          aws s3 cp s3://${{ vars.S3_BUCKET_NAME }}/${{ vars.S3_MICRO_APP_FOLDER }}/manifest.json ./version-manager/manifest.json
+        continue-on-error: true
+
+      - name: Update manifest.json
+        run: node scripts/update-manifest.js
+
+      - name: Upload manifest.json updated to s3
+        run: |
+          aws s3 cp ./version-manager/manifest.json s3://${{ vars.S3_BUCKET_NAME }}/${{ vars.S3_MICRO_APP_FOLDER }}/manifest.json
+
