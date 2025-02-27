@@ -95,7 +95,7 @@ module.exports = {
     eager: true,
   },
   'react-native-pager-view': {
-    requiredVersion: '6.2.3',
+    requiredVersion: '6.7.0',
     singleton: true,
     eager: true,
   },

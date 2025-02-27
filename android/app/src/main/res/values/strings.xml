@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">POCRePack</string>
     <string name="RepackPublicKey">
-        -----BEGIN PUBLIC KEY-----
         MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA15CIZO7nZLh6Q0H8Dpm3
         yI0tUNZUlmzMaTprxcHt55MlNF1rpsG6uvRkmZyomRMkQenE9lU8vFqu+Ip5wSBy
         fzg9mQhkljAXKzG+eJiCw54BybONLY+RVF5tPtQwYeZ6SVuLJmcy9oWxQ1fdmpUB
@@ -14,6 +13,5 @@
         wN0WKbfW7YqEELmwo0GZtvxtqQ8o984QYp6LH+U3epLOQs4ZCUjW3dig6zUqRB+z
         oPhsggb4zFEWkQYHMbvCnIK88oFO0KBQSBDxOm5C2A7BOSNFPqpdN//5OB7mfZvm
         CafjWrI01uolkZc1Ik+Ab3UCAwEAAQ==
-        -----END PUBLIC KEY-----
     </string>
 </resources>
