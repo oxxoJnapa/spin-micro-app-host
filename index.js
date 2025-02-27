@@ -8,22 +8,33 @@ import App from './src/App';
 import {name as appName} from './app.json';
 import {ScriptManager, Script, Federated} from '@callstack/repack/client';
 
+const packageJson = require('package.json');
+
 const baseLocalDomain = 'http://127.0.0.1';
 const baseRemoteDomain = 'https://d2e6qco24lqb4t.cloudfront.net';
 
-function getMicroAppUrl({ basePath, localPort }) {
-  if (__DEV__) {
-    return `${baseLocalDomain}:${localPort}/[name][ext]`;
-  }
-  return `${baseRemoteDomain}/${basePath}/[name][ext]`;
+function getMicroAppLocalUrl({ localPort }) {
+  return `${baseLocalDomain}:${localPort}/[name][ext]`;
 }
 
 const resolveModuleFederated = Federated.createURLResolver({
-  containers: {
-    app1: getMicroAppUrl({ basePath: 'micro-app-1', localPort: '9000' }),
-    app2: getMicroAppUrl({ basePath: 'micro-app-2', localPort: '9001' }),
-  },
+  containers: {},
 });
+
+async function getContainers() {
+  if (__DEV__) {
+    return {
+      app1: getMicroAppLocalUrl({ localPort: '9000' }),
+      app2: getMicroAppLocalUrl({ localPort: '9001' }),
+    };
+  }
+
+  /**
+   * Getting containers manifest from remote server
+   * */
+  const response  = await fetch(`${baseRemoteDomain}/host-app/${packageJson.version}/containers.json`);
+  return response.json();
+}
 
 ScriptManager.shared.addResolver(async (scriptId, caller) => {
   /**

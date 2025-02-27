@@ -35,20 +35,39 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Create manifest.json
+      - name: Get Current Host App version
+        run: |
+          echo "HOST_APP_VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+
+      - name: Create host manifest
         run: |
           mkdir -p ./version-manager
-          echo '{ "host": { "versions": [], "last": "" }, "containers": {} }' > ./version-manager/manifest.json
+          echo '{ "host": { "versions": [], "last": "" } }' > ./version-manager/manifest.json
+          echo '{ "containers": {} }' > ./version-manager/containers.json
 
-      - name: Download current manifest.json from s3
+      - name: Download host manifest from s3
+        id: download-host-manifest
         run: |
           aws s3 cp s3://${{ vars.S3_BUCKET_NAME }}/${{ vars.S3_MICRO_APP_FOLDER }}/manifest.json ./version-manager/manifest.json
         continue-on-error: true
 
+      - name: Get last host version uploaded
+        if: steps.download-host-manifest.conclusion == 'success'
+        run: |
+          echo "LAST_HOST_VERSION=$(node -p "require('./version-manager/manifest.json').host.last")" >> $GITHUB_ENV
+
+      - name: Download last compatible container from s3
+        if: steps.download-host-manifest.conclusion == 'success'
+        run: |
+          aws s3 cp s3://${{ vars.S3_BUCKET_NAME }}/${{ vars.S3_MICRO_APP_FOLDER }}/$LAST_HOST_VERSION/containers.json ./version-manager/containers.json
+
       - name: Update manifest.json
         run: node scripts/update-manifest.js
 
-      - name: Upload manifest.json updated to s3
+      - name: Upload host manifest updated to s3
         run: |
           aws s3 cp ./version-manager/manifest.json s3://${{ vars.S3_BUCKET_NAME }}/${{ vars.S3_MICRO_APP_FOLDER }}/manifest.json
 
+      - name: Upload host containers to s3
+        run: |
+          aws s3 cp ./version-manager/containers.json s3://${{ vars.S3_BUCKET_NAME }}/${{ vars.S3_MICRO_APP_FOLDER }}/$HOST_APP_VERSION/containers.json
