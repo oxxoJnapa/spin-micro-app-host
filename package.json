@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "build:android": "",
+    "build:android": "cd android && ./gradlew assembleRelease",
     "build:ios": "xcodebuild -workspace ios/POCRePack.xcworkspace -scheme POCRePack -configuration POCRePack.Release -sdk iphonesimulator",
     "ios": "react-native run-ios",
     "lint": "eslint .",
@@ -22,6 +22,7 @@
     "@digitaltitransversal/tr_superapp_theme": "file:./spin-packages/tr_superapp_theme-v1.tgz",
     "@fintechdigitalventure/spin-mobile-illustrations": "file:./spin-packages/spin-mobile-illustrations-v1.tgz",
     "@fluentui/react-context-selector": "9.1.57",
+    "@react-native-async-storage/async-storage": "1.23.1",
     "@react-navigation/drawer": "7.1.1",
     "@react-navigation/native": "7.0.14",
     "@react-navigation/native-stack": "7.2.0",
