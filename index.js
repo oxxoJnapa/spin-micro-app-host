@@ -122,6 +122,7 @@ ScriptManager.shared.addResolver(async (scriptId, caller) => {
 
   return {
     url: federatedModuleUrl,
+    cache: !__DEV__,
     query: {
       platform: Platform.OS,
     },
