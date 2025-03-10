@@ -1,13 +1,13 @@
-const Repack = require('@callstack/repack');
-
 module.exports = {
   react: {
-    ...Repack.Federated.SHARED_REACT,
     requiredVersion: '18.3.1',
+    singleton: true,
+    eager: true,
   },
   'react-native': {
-    ...Repack.Federated.SHARED_REACT_NATIVE,
     requiredVersion: '0.75.4',
+    singleton: true,
+    eager: true,
   },
   'react-native-gesture-handler': {
     requiredVersion: '2.22.0',

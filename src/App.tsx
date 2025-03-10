@@ -12,6 +12,9 @@ import { ThemeProvider } from '@digitaltitransversal/tr_superapp_theme';
 
 import HostNavigation from './HostNavigation';
 
+/*const LazyLocalComponent = React.lazy(() => import('./components/LazyLocalComponent'));
+const LazyRemoteComponent = React.lazy(() => import(/!* webpackChunkName: "LazyRemoteComponent.remote" *!/ './components/LazyRemoteComponent'));*/
+
 function App(): React.JSX.Element {
   return (
     <GestureHandlerRootView>
