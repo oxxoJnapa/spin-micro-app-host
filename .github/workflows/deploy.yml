@@ -64,7 +64,7 @@ jobs:
       - name: Download host manifest from s3
         id: download-host-manifest
         run: |
-          aws s3 cp s3://${{ vars.S3_BUCKET_NAME }}/manifest.json ./version-manager/manifest.json
+          aws s3 cp s3://${{ vars.S3_BUCKET_NAME }}/${{ vars.S3_MICRO_APP_FOLDER }}/manifest.json ./version-manager/manifest.json
         continue-on-error: true
 
       - name: Get last host version uploaded
@@ -75,14 +75,14 @@ jobs:
       - name: Copy micro-apps compatibles with new version
         if: steps.download-host-manifest.outcome == 'success'
         run: |
-          aws s3 cp s3://${{ vars.S3_BUCKET_NAME }}/$LAST_HOST_VERSION s3://${{ vars.S3_BUCKET_NAME }}/$HOST_APP_VERSION --recursive
+          aws s3 cp s3://${{ vars.S3_BUCKET_NAME }}/${{ vars.S3_MICRO_APP_FOLDER }}/$LAST_HOST_VERSION s3://${{ vars.S3_BUCKET_NAME }}/${{ vars.S3_MICRO_APP_FOLDER }}/$HOST_APP_VERSION --recursive
 
       - name: Update manifest.json
         run: node scripts/update-manifest.js
 
       - name: Upload host manifest updated to s3
         run: |
-          aws s3 cp ./version-manager/manifest.json s3://${{ vars.S3_BUCKET_NAME }}/manifest.json
+          aws s3 cp ./version-manager/manifest.json s3://${{ vars.S3_BUCKET_NAME }}/${{ vars.S3_MICRO_APP_FOLDER }}/manifest.json
 
 #      - name: Get Current Host App version
 #        run: |

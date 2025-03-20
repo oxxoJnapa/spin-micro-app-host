@@ -25,7 +25,8 @@ const packageJson = require('./package.json');
  *   app1: 'app1@https://my-domain.com/1.0.0/micro-app-folder/mf-manifest.json',
  * }
  * */
-function getMicroApps(platform, isDev) {
+function getMicroApps(platform) {
+  const isDev = false;
   function getDomain({ appDomain, localDomain }) {
     if (isDev) {
       return localDomain;
@@ -43,8 +44,8 @@ function getMicroApps(platform, isDev) {
   }
 
   return {
-    app1: createRemoteApp({appName: 'app1', appRemoteFolderName: 'micro-app-1', localDomain: 'http://localhost:9000'}),
-    app2: createRemoteApp({appName: 'app2', appRemoteFolderName: 'micro-app-2', localDomain: 'http://localhost:9001'}),
+    app1: createRemoteApp({appName: 'app1', appRemoteFolderName: 'micro-app-1', localDomain: 'http://localhost:9000', appDomain: 'https://d2e6qco24lqb4t.cloudfront.net'}),
+    app2: createRemoteApp({appName: 'app2', appRemoteFolderName: 'micro-app-2', localDomain: 'http://localhost:9001', appDomain: 'https://d2e6qco24lqb4t.cloudfront.net'}),
   };
 }
 
