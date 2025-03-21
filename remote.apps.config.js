@@ -19,33 +19,34 @@ const packageJson = require('./package.json');
  * Example of final url on release mode:
  *
  * Structure:
- * <micro-app-name>@<domain>/<host-version>/<micro-app-folder>/mf-manifest.json
+ * <micro-app-name>@<domain>/<host-remote-folder>/<host-version>/<micro-app-package-name>-manifest.json
  *
  * {
- *   app1: 'app1@https://my-domain.com/1.0.0/micro-app-folder/mf-manifest.json',
+ *   app1: 'app1@https://my-domain.com/host-folder/1.0.0/micro-app-package-name-manifest.json',
  * }
  * */
-function getMicroApps(platform) {
-  const isDev = false;
-  function getDomain({ appDomain, localDomain }) {
+function getMicroApps(platform, isDev) {
+  function createRemoteApp({appName, appDomain = process.env.MICRO_APPS_DOMAIN, localDomain, microAppPackageName, hostRemoteFolderName = process.env.HOST_APP_FOLDER}) {
+    let manifestPath = `${appDomain}/${hostRemoteFolderName}/${packageJson.version}/${microAppPackageName}-manifest.json`;
+
     if (isDev) {
-      return localDomain;
+      manifestPath = `${localDomain}/${platform}/mf-manifest.json`;
     }
-    return appDomain;
-  }
 
-  function createRemoteApp({appName, appDomain = process.env.MICRO_APPS_DOMAIN, localDomain, appRemoteFolderName}) {
-    const _domain = getDomain({ appDomain, localDomain });
-    const _platform = isDev ? `/${platform}` : '';
-    const _hostVersion = isDev ? '' : `/${packageJson.version}`;
-    const _remoteFolder = isDev ? '' : `/${appRemoteFolderName}`;
-
-    return `${appName}@${_domain}${_hostVersion}${_remoteFolder}${_platform}/mf-manifest.json`;
+    return `${appName}@${manifestPath}`;
   }
 
   return {
-    app1: createRemoteApp({appName: 'app1', appRemoteFolderName: 'micro-app-1', localDomain: 'http://localhost:9000', appDomain: 'https://d2e6qco24lqb4t.cloudfront.net'}),
-    app2: createRemoteApp({appName: 'app2', appRemoteFolderName: 'micro-app-2', localDomain: 'http://localhost:9001', appDomain: 'https://d2e6qco24lqb4t.cloudfront.net'}),
+    app1: createRemoteApp({
+      appName: 'app1',
+      microAppPackageName: 'POCRePackMicroApp1',
+      localDomain: 'http://localhost:9000',
+    }),
+    app2: createRemoteApp({
+      appName: 'app2',
+      microAppPackageName: 'POCRePackMicroApp2',
+      localDomain: 'http://localhost:9001',
+    }),
   };
 }
 

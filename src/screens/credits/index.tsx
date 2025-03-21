@@ -1,8 +1,8 @@
 import React from 'react';
 import LoadMicroApp from '../../components/LoadMicroApp';
-import {Federated} from '@callstack/repack/client';
+import safeImport from '../../utils/safe-import';
 
-const CreditsNavigator = React.lazy(() => Federated.importModule('app2', './CreditsNavigator'));
+const CreditsNavigator = React.lazy(() => safeImport('app2/CreditsNavigator', 'Credits Module'));
 
 export default function CreditsNavigation() {
   return (
