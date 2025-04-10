@@ -91,6 +91,7 @@ export default (env) => {
         remotes: getMicroApps(platform, mode !== 'production'),
         reactNativeDeepImports: true,
         shared: sharedModules,
+        runtimePlugins: [path.resolve(__dirname, 'src/mf-plugins/remote-fallback-plugin.ts')],
       }),
       // silence missing @react-native-masked-view optionally required by @react-navigation/elements
       new rspack.IgnorePlugin({

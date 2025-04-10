@@ -1,3 +1,9 @@
 declare module 'app1/AuthNavigator' {
-  export default React.Component;
+  const Component: React.ComponentType<any>;
+  export default Component;
+}
+
+declare module 'app2/CreditsNavigator' {
+  const Component: React.ComponentType<any>;
+  export default Component;
 }

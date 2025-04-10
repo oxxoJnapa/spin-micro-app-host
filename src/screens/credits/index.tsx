@@ -1,8 +1,7 @@
 import React from 'react';
 import LoadMicroApp from '../../components/LoadMicroApp';
-import safeImport from '../../utils/safe-import';
 
-const CreditsNavigator = React.lazy(() => safeImport('app2/CreditsNavigator', 'Credits Module'));
+const CreditsNavigator = React.lazy(() => import('app2/CreditsNavigator'));
 
 export default function CreditsNavigation() {
   return (

@@ -1,8 +1,7 @@
 import React from 'react';
 import LoadMicroApp from '../../components/LoadMicroApp';
-import safeImport from '../../utils/safe-import';
 
-const AuthNavigator = React.lazy(() => safeImport('app1/AuthNavigator', 'Login Module'));
+const AuthNavigator = React.lazy(() => import('app1/AuthNavigator'));
 
 export default function AuthNavigation() {
   return (
