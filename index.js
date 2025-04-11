@@ -9,11 +9,14 @@ import {name as appName} from './app.json';
 import {ScriptManager, Script} from '@callstack/repack/client';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-if (!__DEV__) {
+const enableStorage = !__DEV__;
+
+if (enableStorage) {
   ScriptManager.shared.setStorage({
     getItem: async (key) => {
-      console.log('ScriptManager storage - get', {key});
-      return AsyncStorage.getItem(key);
+      const response = await AsyncStorage.getItem(key);
+      console.log('ScriptManager storage - get', {key, value: JSON.parse(response)});
+      return response;
     },
     setItem: async (key, value) => {
       console.log('ScriptManager storage - set', {key, value});

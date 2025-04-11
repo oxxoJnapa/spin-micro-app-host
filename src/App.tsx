@@ -11,9 +11,10 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import { ThemeProvider } from '@digitaltitransversal/tr_superapp_theme';
 
 import HostNavigation from './HostNavigation';
+// import LoadMicroApp from './components/LoadMicroApp';
 
-/*const LazyLocalComponent = React.lazy(() => import('./components/LazyLocalComponent'));
-const LazyRemoteComponent = React.lazy(() => import(/!* webpackChunkName: "LazyRemoteComponent.remote" *!/ './components/LazyRemoteComponent'));*/
+// const LazyLocalComponent = React.lazy(() => import('./components/LazyLocalComponent'));
+// const LazyRemoteComponent = React.lazy(() => import(/!* webpackChunkName: "LazyRemoteComponent.remote" *!/ './components/LazyRemoteComponent'));
 
 function App(): React.JSX.Element {
   return (

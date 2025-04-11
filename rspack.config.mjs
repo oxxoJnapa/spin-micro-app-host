@@ -91,7 +91,14 @@ export default (env) => {
         remotes: getMicroApps(platform, mode !== 'production'),
         reactNativeDeepImports: true,
         shared: sharedModules,
-        runtimePlugins: [path.resolve(__dirname, 'src/mf-plugins/remote-fallback-plugin.ts')],
+        defaultRuntimePlugins: [
+          "@callstack/repack/mf/core-plugin",
+          path.resolve(__dirname, 'src/mf-plugins/after-resolve-plugin.ts'),
+        ],
+        runtimePlugins: [
+          path.resolve(__dirname, 'src/mf-plugins/remote-fallback-plugin.ts'),
+          path.resolve(__dirname, 'src/mf-plugins/fetch-with-auth.ts'),
+        ],
       }),
       // silence missing @react-native-masked-view optionally required by @react-navigation/elements
       new rspack.IgnorePlugin({
